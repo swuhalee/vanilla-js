@@ -1,15 +1,193 @@
+<!-- DTD: 문서형 정의 -->
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- 문서 정보 정의 -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서마다 중복되면 안됨: 검색 엔진이 문서의 내용을 이해하는 데 사용함, 중복된 title은 걔가 신뢰성이 떨어진다고 판단해서 노출에 불리해짐 -->
     <title>My First Web Page!</title>
 </head>
 
+<!-- 웹 브라우저에 표시할 내용 -->
+
 <body>
-    <!-- 웹 페이지에 표시할 내용을 적습니다. -->
-    <p>나의 첫 번째 웹 페이지</p>
+    <header class="hn-tags">
+        <!-- 웹 페이지에 표시할 내용을 적습니다. -->
+        <!-- hn 태그로 작성된 텍스트는 검색 엔진에서 키워드로 인식함 SEO를 위해 핵심이 되는 내용으로 제목이나 주제를 잘 선택해서 작성 -->
+        <!-- h1 태그부터 단계적으로 검색하는데, 만약 h3이 없으면 h1, h2까지만 순서대로 검색하고 h4를 검색하진 않으니 단계적으로 잘 사용해야 함 -->
+        <!-- 굳이 검색하지 않는건 아닌데, 문서 구조가 깨진 걸로 보고 키워드 가중치가 낮아진다고 하니 기회비용 날린 것과 비슷하다고 봄 -->
+        <h1>Heading level 1</h1>
+        <h2>Heading level 2</h2>
+        <h3>Heading level 3</h3>
+        <h4>Heading level 4</h4>
+        <h5>Heading level 5</h5>
+        <h6>Heading level 6</h6>
+    </header>
+
+    <nav>
+        <p>오늘 <span>공짜밥</span>을 먹었더니<br>기분이 좋습니다!</p>
+
+        <!-- 인용구: 출처에서 인용한 문단 단위의 텍스트를 작성할 때 사용, p 태그 최소 1개 포함 -->
+        <blockquote cite="onet-connect.com">
+            <p>제가 최근에 만든 사이트예요</p>
+        </blockquote>
+
+        <!-- 짧은 인용문: 큰따옴표가 생김 -->
+        <p>이것도 제가 최근에 만든 사이트인 <q cite="banner-archive.kr">개짱멋진사이트</q>입니다</p>
+    </nav>
+
+    <main>
+        <section>
+            <ins>추가된 텍스트, 풀네임은 Inserted Text</ins>
+            <del>삭제된 텍스트</del>
+
+            <p>공기의 원소 기호는 H<sub>2</sub>O -> Subscript</p>
+            <p>4<sup>2</sup>은 16 -> Superscript </p>
+
+            <p><strong>크고</strong> 어쩌고 <em>강조하고</em> 어쩌고</p>
+        </section>
+
+        <section>
+            <ul>
+                <li>비순서형</li>
+                <li>목록</li>
+                <li>unordered list</li>
+            </ul>
+
+            <ol>
+                <li>순서형</li>
+                <li>목록</li>
+                <li>ordered list</li>
+            </ol>
+
+            <dl>
+                <dt>description List</dt>
+                <dd>정의형 목록</dd>
+                <dt>description term</dt>
+                <dd>description details</dd>
+            </dl>
+        </section>
+
+        <section>
+            <form action="서버 url" method="get">
+                <!-- name: form 태그에 의해 서버로 전송될 때, name 속성에 적힌 값이 이름으로 지정됨 서버는 그걸로 식별함 -->
+                <!-- value: 초기값-->
+                <label>
+                    텍스트 입력
+                    <input type="text" name="text" placeholder="한 줄 텍스트">
+                </label>
+
+                <label for="password">비밀번호</label>
+                <input id="password" type="password" name="password" placeholder="비밀번호">
+
+                <label for="desc">
+                    <textarea id="desc" name="desc" readonly>여러줄 입력</textarea>
+                </label>
+
+                <fieldset>
+                    <legend>시간 관련 그룹</legend>
+                    <input type="date" name="date" placeholder="날짜">
+                    <input type="datetime-local" name="datetime-local" placeholder="날짜와 시간">
+                    <input type="month" name="month" placeholder="월">
+                    <input type="week" name="week" placeholder="주"> <!-- 와 이거 하람에 써먹으면 되겠네 -->
+                    <input type="time" name="time" placeholder="시간">
+                </fieldset>
+
+                <input type="tel" name="tel" placeholder="전화번호" maxlength="11">
+
+                <input type="email" name="email" placeholder="이메일">
+                <input type="number" name="number" placeholder="숫자">
+                <input type="url" name="url" placeholder="URL">
+                <input type="search" name="search" placeholder="검색어">
+                <input type="checkbox" name="checkbox" value="checkbox" checked> 체크박스
+                <input type="radio" name="radio" value="radio"> 라디오 버튼
+                <input type="file" name="file"> 파일 업로드
+                <input type="button" value="버튼">
+                <input type="image" src="./images/bear.png" alt="이미지 버튼">
+                <input type="hidden" name="hidden" value="숨겨진 값">
+                <input type="range" name="range" placeholder="범위">
+                <input type="color" name="color" placeholder="색상">
+                <input type="submit" value="제출">
+                <input type="reset" value="초기화">
+            </form>
+
+            <select name="city" id="city" size="3" multiple>
+                <optgroup label="서울시">
+                    <option value="강북구" selected>강북구</option>
+                    <option value="강남구">강남구</option>
+                </optgroup>
+                <optgroup label="인천시">
+                    <option value="미추홀구">미추홀구</option>
+                    <option value="계양구">계양구</option>
+                </optgroup>
+            </select>
+
+            <!-- 버튼 태그는 input과 달리 open tag, close tag가 있어서 내부에 콘텐츠를 작성할 수 있음, 버튼 꾸미기 수월-->
+            <!-- disabled, readonly 차이: 전자는 form 태그로 서버에 값 전송 시 아예 전송 안됨-->
+            <button type="button" disabled>버튼</button>
+            <button type="reset">리셋</button>
+            <button type="submit">제출</button>
+        </section>
+
+        <!-- section과의 차이: section는 페이지 안에서 관련있는 내용을 구분, article는 어떤 페이지든 독립적으로 (재)사용될 수 있는 영역-->
+        <article>
+            <a href="https://www.naver.com" target="_parent" title="네이버">href: Hypertext Reference</a>
+
+            <a href="#" target="_blank" title="곰탱이">
+                <img src="./images/bear.png" alt="곰탱이, Alternative Text">
+            </a>
+        </article>
+
+        <!-- section나 article로 쓸 수 없는 것, 주력도 아니고 독립적이지 않은 내용 -->
+        <aside>
+            <table>
+                <caption>caption: 표 제목</caption>
+                <col style="width: 80px">
+                <colgroup span="2" style="width: 150px"></colgroup>
+                <col style="width: 250px">
+                <thead>
+                    <th scope="col">table head</th>
+                    <th>head2</th>
+                    <th>head3</th>
+                    <th>head4</th>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td>1</td>
+                        <td colspan="2">옆셀과 병합</td>
+                        <td>4</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th scope="row">table data</th>
+                        <td>data2</td>
+                        <td>data3</td>
+                        <td rowspan="2">아래 셀과 병합</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">옆셀과 병합</td>
+                        <td>data3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </main>
+
+    <footer>
+        <!-- if문 같은거임 모든 브라우저에서 모든 포맷을 지원하는게 아니니까 -->
+        <!-- wav 타입 확인 -> mp3 타입 확인 -> 다 아니면 지원 안한다고 표기(웹 접근성 고려)-->
+        <audio controls>
+            <source src="a.wav" type="audio/wav">
+            <source src="b.mp3" type="audio/mp3">
+            지원하지 않는 웹 브라우저입니다.
+        </audio>
+        <audio src="https://www.youtube.com/watch?v=Zyd4UtB0jyI" controls></audio>
+        <video src="https://www.youtube.com/watch?v=Zyd4UtB0jyI" controls></video>
+    </footer>
 </body>
 
 </html>
