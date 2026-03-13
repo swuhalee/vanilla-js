@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            color: red;
+        }
+
+        p,
+        a {
+            color: blue;
+        }
+
+        #title {
+            color: green;
+        }
+
+        .gray {
+            color: gray;
+        }
+
+        a[target="_blank"] {
+            color: red;
+            display: block;
+        }
+
+        .box > p {
+            color: aqua;
+        }
+
+        div h1 {
+            color: chocolate;
+        } */
+
+        h1+h2 {
+            color: red
+        }
+
+        h3~h4 {
+            color: green;
+        }
+
+        /* 가상 요소 선택자 */
+        p::before {
+            content: '<b>';
+            color: red;
+        }
+
+        p::after {
+            content: '<a>';
+        }
+
+        p:hover {
+            color: aqua;
+        }
+
+        p:active {
+            color: blue;
+        }
+
+        a:link {
+            color: orange;
+        }
+
+        a:visited {
+            color: green;
+        }
+
+        input:focus {
+            color: red;
+        }
+
+        input:checked {
+            color: orange;
+        }
+
+        input:disabled {
+            color: yellow;
+        }
+
+        input:enabled {
+            color: green;
+        }
+
+        /* li:first-child {
+            color: red;
+        } */
+
+        li:last-child {
+            color: purple;
+        }
+
+        li:nth-child(2) {
+            color: orange;
+        }
+
+        li:nth-last-child(2) {
+            color: blue;
+        }
+
+        p:nth-of-type(2) {
+            color: chartreuse;
+        }
+
+        p:nth-last-of-type(2) {
+            color: cornflowerblue;
+        }
+
+        li:first-of-type {
+            color: coral;
+        }
+
+        li:last-of-type {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>전체 선택자</h1>
+    <h2 id="title">듀듀듀</h2>
+    <p>내용</p>
+    <p class="gray">그레이</p>
+    <a href="#dd" target="_parent">기본 a 태그</a>
+    <a href="#" target="_blank">새 창으로 열리는 a 태그</a>
+    <div class="box">
+        <h1>ddd</h1>
+        <p>eee</p>
+    </div> -->
+
+    <h1>ss</h1>
+    <h2>dd</h2>
+    <h2>ff</h2>
+
+    <h3>qq</h3>
+    <h4>ww</h4>
+    <h4>ee</h4>
+
+    <p>gg</p>
+
+    <a href="#" target="_blank">ff</a>
+
+    <input type="text" placeholder="text" disabled>
+    <input type="checkbox">
+
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+    <p>jj</p>
+</body>
+
+</html>

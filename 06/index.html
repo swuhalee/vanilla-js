@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 4000px;
+        }
+
+        .text {
+            font-family: BatangChe, "Times New Roman", serif;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: oblique;
+            font-variant: small-caps;
+            color: red;
+            text-align: center;
+            text-decoration: overline;
+            letter-spacing: 20px;
+            line-height: 30px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            /* margin: 20px 40px;
+            border: 8px dotted red;
+            padding: 10px;
+            box-sizing: border-box; */
+        }
+
+        .first {
+            margin-bottom: 20px;
+        }
+
+        .second {
+            margin-top: 30px;
+        }
+
+        .parent {
+            width: 320px;
+            height: 320px;
+            overflow: scroll;
+            border: 10px solid blue;
+        }
+
+        .back {
+            width: 320px;
+            height: 2000px;
+            background-color: red;
+            background-image: url('./images/cat.jpeg');
+            background-size: 80px 60px;
+            background-repeat: repeat-y;
+            background-position: center center;
+            background-attachment: scroll;
+        }
+
+        .one {
+            width: 300px;
+            height: 100px;
+            background: red url('./images/cat.jpeg') no-repeat center/100% 100% fixed;
+        }
+
+        .static {
+            position: static;
+            background-color: red;
+        }
+
+        .relative {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            background-color: green;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background-color: blue;
+        }
+
+        .fixed {
+            position: fixed;
+            left: 100px;
+            top: 200px;
+            background-color: aqua;
+            z-index: 10;
+        }
+
+        /* sticky는 workgin draft 상태라 정식 표준이 아님. 그래서 구형 웹 브라우저에선 안먹힘 */
+        .sticky {
+            position: sticky;
+            background-color: pink;
+            top: 100px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            float: right;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="text">i love dog</p>
+    <p class="box">i love cat</p>
+
+    <p class="first">lorem1</p>
+    <p class="second">lorem2</p>
+
+    <div class="parent">
+        <div class="back"></div>
+    </div>
+
+    <div class="one"></div>
+
+    <div class="box static"></div>
+    <div class="box relative"></div>
+    <div class="box absolute"></div>
+    <div class="box fixed"></div>
+    <div class="box sticky"></div>
+
+
+    <div style="width: 400px;">
+        <img src="./images/cat.jpeg" alt="시하님네 고양이">
+        <p>고양이 넘 귀여워....................................................................................................................</p>
+    </div>
+</body>
+
+</html>

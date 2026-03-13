@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크</title>
+    <style>
+        /* 
+            head 태그에 CSS를 작성하면 CSS를 빠르게 불러오는 장점이 있음
+            근데 웹 브라우저에서 HTML 문서를 해석할 때마다 CSS 코드를 매번 다시 읽기 때문에 성능상 안좋음
+        */
+        ol.nested-counter {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 1.5em;
+        }
+
+        ol.nested-counter li {
+            counter-increment: item;
+        }
+
+        ol.nested-counter li::before {
+            content: counters(item, ".") ". ";
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 보통은 외부 스타일 시트를 가져오고, 인라인 스타일 방법은 특별한 경우를 제외하고는 실무에서 거의 사용하지 않는다고는... 함 -->
+    <section>
+        <div style="
+        background-color: rgb(248, 255, 35);
+        width: 280px;
+        padding: 20px 24px 28px;
+        margin: 40px;
+        box-shadow: 4px 4px 8px rgba(0,0,0,0.25), 0 1px 3px rgba(0,0,0,0.15);
+        transform: rotate(-1.5deg);
+        font-family: 'Nanum Pen Script', 'Gungsuh', cursive;
+        position: relative;
+        line-height: 1.7;
+    ">
+            <div style="
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 28px;
+            background: rgba(200, 200, 100, 0.6);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border-radius: 2px;
+        "></div>
+            <h1
+                style="font-size: 1.2rem; margin: 0 0 12px; border-bottom: 1px dashed rgba(0,0,0,0.2); padding-bottom: 8px; text-align: center;">
+                To. 남편</h1>
+            <p style="margin: 0 0 8px; text-align: center;">여보~ 오늘 급하게 먼저 출근해야 해서<br>인사도 못하고 먼저 나가요~</p>
+            <p style="margin: 0 0 8px; text-align: center;">아침 굶지 말고 냉장고에 있는 반찬<br>전자레인지에 데워서 챙겨 먹고 나가요~!</p>
+            <p style="margin: 0; text-align: center;">그럼 오늘 하루도 힘내고 이따 저녁에 봐요~<br>화이팅~!</p>
+        </div>
+    </section>
+
+    <section>
+        <form style="
+            display: flex;
+            flex-direction: column;
+            width: 280px;
+            gap: 8px;
+            align-items: center;
+            border: 1px solid black;
+            padding: 16px;
+        ">
+            <button style="
+                display: flex; 
+                flex-direction: row; 
+                align-items: center; 
+                gap: 4px; 
+                background-color: white; 
+                border-color: black;
+            ">
+                <img src="./images/bear.png" alt="곰돌이" style="height: 24px; width: 24px;">
+                <p>Log in with Bear</p>
+            </button>
+            <p>or</p>
+            <input type="text" placeholder="Username" style="background-color: gainsboro; border-color: transparent;">
+            <input type="password" placeholder="Password"
+                style="background-color: gainsboro; border-color: transparent;">
+            <button style="background-color: black; color: white;">LOGIN</button>
+            <a>Forgot your password?</a>
+        </form>
+    </section>
+
+    <section>
+        <div style="
+            display: flex;
+            flex-direction: column;
+            width: 330px;
+            align-items: center;
+            border: 1px solid black;
+            padding: 16px;
+        ">
+            <h3>목차</h3>
+            <ol class="nested-counter">
+                <li>
+                    역사
+                    <ol class="nested-counter">
+                        <li>개발</li>
+                        <li>최초 규격</li>
+                        <li>
+                            표준 버전의 역사
+                            <ol class="nested-counter">
+                                <li>HTML 버전 스케줄</li>
+                                <li>HTML 초안 버전 스케줄</li>
+                                <li>XHTML 버전</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    마크업
+                    <ol class="nested-counter">
+                        <li>HTML 요소</li>
+                        <li>데이터 형식</li>
+                        <li>문서 형식 선언</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </section>
+</body>
+
+</html>

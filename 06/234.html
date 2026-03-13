@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .poppins {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red-box {
+            background-color: red;
+            float: left;
+        }
+
+        .blue-box {
+            background-color: blue;
+            float: left;
+            transition-property: background-color, color, width;
+            transition-duration: 1s 500ms 2s;
+            transition-delay: 1s;
+        }
+
+        .blue-box:hover {
+            width: 200px;
+            background-color: aqua;
+            border: 10px dotted black;
+        }
+
+        .green-box {
+            background-color: green;
+            clear: left;
+        }
+
+        .container .bar {
+            width: 10px;
+            background-color: red;
+            transition-property: width;
+            transition-duration: 5s;
+        }
+
+        .container:hover .bar {
+            width: 150px;
+        }
+
+        .bar:nth-child(1) {
+            transition-timing-function: linear;
+        }
+
+        .bar:nth-child(2) {
+            transition-timing-function: ease;
+        }
+
+        .bar:nth-child(3) {
+            transition-timing-function: ease-in;
+        }
+
+        .bar:nth-child(4) {
+            transition-timing-function: ease-out;
+        }
+
+        .bar:nth-child(5) {
+            transition-timing-function: ease-in-out;
+        }
+
+        @keyframes bgChange {
+            from {
+                background-color: red;
+            }
+
+            25% {
+                background-color: orange;
+            }
+
+            50% {
+                background-color: greenyellow;
+            }
+
+            75% {
+                background-color: aqua;
+            }
+
+            to {
+                background-color: violet;
+            }
+        }
+
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: white;
+            animation-name: bgChange;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 5;
+            animation-direction: reverse;
+        }
+
+        .transform-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .transform-box:hover {
+            /* transform: translate(100px, 200px); */
+            /* transform: scaleX(2); */
+            /* transform: scaleY(2); */
+            /* transform: scale(2, 2); */
+            /* transform: skew(30deg, 30deg); */
+            transform: rotate(30deg);
+            transform-origin: top left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box red-box"></div>
+    <div class="box blue-box"></div>
+    <div class="box green-box"></div>
+
+
+    <div class="container">
+        <div class="bar">linear</div>
+        <div class="bar">ease</div>
+        <div class="bar">ease-in</div>
+        <div class="bar">ease-out</div>
+        <div class="bar">ease-in-out</div>
+    </div>
+
+    <div class="animation-box"></div>
+
+    <div class="transform-box"></div>
+
+    <p class="poppins">i love cat</p>
+
+    <i class="fa-brands fa-google"></i>
+</body>
+
+</html>
