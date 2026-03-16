@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>클릭</button>
+    <br><br>
+
+    <form>
+        <input type="text">
+    </form>
+
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+
+    <p>text-1</p>
+    <p>text-2</p>
+    <p>text-3</p>
+
+    <script>
+        // function clickEvent() {
+        //     alert("click");
+        // }
+
+        // function focusEvent() {
+        //     console.log("focus on");
+        // }
+
+        // function blurEvent() {
+        //     console.log("focus out");
+        // }
+
+        const btnEl = document.querySelector("button");
+        // btnEl.onclick = () => {
+        //     alert("click2");
+        // }
+
+        btnEl.addEventListener("click", function (event) {
+            console.log(event.clientX);
+            console.log(event.clientY);
+            console.log(event.pageX);
+            console.log(event.pageY);
+            console.log(event.screenX);
+            console.log(event.screenY);
+        })
+
+        const inputEl = document.querySelector("input");
+        inputEl.addEventListener("keydown", function (event) {
+            console.log(`keyCode: ${event.keyCode}`);
+            console.log(event.ctrlKey);
+            console.log(event.altKey);
+            console.log(event.shiftKey);
+        })
+
+        const aEls = document.querySelectorAll("a");
+        for (let i = 0; i < aEls.length; i++) {
+            aEls[i].addEventListener("click", function (e) {
+                e.preventDefault();
+            })
+        }
+
+        const pEls = document.querySelectorAll("p");
+        // pEls.forEach((el) => {
+        //     el.addEventListener("click", function() {
+        //         if (this.style.color === "red") {
+        //             this.style.color = "black";
+        //         } else {
+        //             this.style.color = "red";
+        //         }
+        //     })
+        // })
+
+        pEls.forEach((el) => {
+            el.addEventListener("click", (e) => {
+                if (e.target.style.color === "red") {
+                    e.target.style.color = "black";
+                } else {
+                    e.target.style.color = "red";
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

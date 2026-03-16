@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>text</p>
+    <script>
+        const aEl = document.createElement("a");
+        document.body.appendChild(aEl);
+
+        const hrefAttr = document.createAttribute("href");
+        hrefAttr.value = "https://www.onet-connect.com";
+        document.querySelector("a").setAttributeNode(hrefAttr);
+
+        const txtEl = document.createTextNode("듀");
+        document.querySelector("a").appendChild(txtEl);
+
+        const pEl = document.querySelector("p");
+        pEl.parentNode.removeChild(pEl);
+    </script>
+</body>
+</html>
